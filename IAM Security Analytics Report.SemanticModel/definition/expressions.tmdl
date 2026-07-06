@@ -1,9 +1,0 @@
-expression 'DirectLake - lh_AccessRiskAnalyticsPipeline' =
-		let
-		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/7f37925a-9f89-47d7-88a9-860a1bf4cb93/41bfecef-df72-44f2-8176-95ef243c32bf", [HierarchicalNavigation=true])
-		in
-		    Source
-	lineageTag: 0ef7036b-f7aa-4a2d-8020-a807efc1fdaf
-
-	annotation PBI_IncludeFutureArtifacts = False
-
