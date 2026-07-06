@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Notebook",
-    "displayName": "queries"
+    "displayName": "nb_dataCleaningSilver"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "593556a3-cc50-a973-47e0-6a43c4421c18"
+    "logicalId": "e113a13e-a599-b996-4739-def16f96cb20"
   }
 }
