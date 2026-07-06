@@ -133,11 +133,11 @@ These tables are ready for reporting and analytics.
 
 | Notebook | Purpose |
 |-----------|----------|
-| Data Generation | Generate synthetic IAM datasets |
-| Data Cleaning | Clean and validate data |
-| Anomaly Detection | Detect suspicious activity |
-| SQL | Create Delta tables |
-| Load to DB | Load curated data into Delta tables |
+| nb_DataGeneration | Generate synthetic IAM datasets |
+| nb_dataCleaningSilver | Clean and validate data |
+| nb_AnomalyDetectionGold| Detect suspicious activity |
+| CreateTables | Create Delta tables |
+| nb_loadToDelta | Load curated data into Delta tables |
 
 ---
 
@@ -201,7 +201,6 @@ Potential enhancements include:
 - Machine Learning anomaly detection
 - Fabric Data Pipelines orchestration
 - CI/CD using GitHub Actions
-- Power BI dashboards
 
 ---
 
@@ -210,11 +209,11 @@ Potential enhancements include:
 ```
 notebooks/
 │
-├── 01_Data_Generation.ipynb
-├── 02_Data_Cleaning.ipynb
-├── 03_Anomaly_Detection.ipynb
-├── 04_Create_Tables.sql
-├── 05_Load_to_DB.ipynb
+├── 01_nb_DataGeneration.ipynb
+├── 02_nb_dataCleaningSilver.ipynb
+├── 03_nb_AnomalyDetectionGold.ipynb
+├── 04_CreateTables.sql
+├── 05_nb_loadToDelta.ipynb
 │
 README.md
 ```
