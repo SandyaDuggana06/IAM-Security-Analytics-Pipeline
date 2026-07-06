@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "faf37368e7e80abf15c0",
+  "position": {
+    "x": 41,
+    "y": 481,
+    "z": 10000,
+    "height": 146,
+    "width": 812,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "user_id"
+                }
+              },
+              "queryRef": "anomalies.user_id",
+              "nativeQueryRef": "user_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "anomaly_type"
+                }
+              },
+              "queryRef": "anomalies.anomaly_type",
+              "nativeQueryRef": "anomaly_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "risk_level"
+                }
+              },
+              "queryRef": "anomalies.risk_level",
+              "nativeQueryRef": "risk_level"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "detected_at"
+                }
+              },
+              "queryRef": "anomalies.detected_at",
+              "nativeQueryRef": "detected_at"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "username"
+                }
+              },
+              "queryRef": "users.username",
+              "nativeQueryRef": "username"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "users.department",
+              "nativeQueryRef": "department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "role"
+                }
+              },
+              "queryRef": "users.role",
+              "nativeQueryRef": "role"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

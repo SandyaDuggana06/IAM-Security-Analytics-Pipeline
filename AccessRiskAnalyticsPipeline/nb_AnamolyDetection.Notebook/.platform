@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "nb_AnamolyDetection"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4da315e2-df7b-85b8-4e2f-19c2115c8014"
+  }
+}

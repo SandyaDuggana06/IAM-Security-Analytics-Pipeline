@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "757a2b309d4363779794",
+  "position": {
+    "x": 976.68518582421746,
+    "y": 634.63335518823976,
+    "z": 14000,
+    "height": 84.806239000655651,
+    "width": 220.49622140170467,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "risk_level"
+                }
+              },
+              "queryRef": "anomalies.risk_level",
+              "nativeQueryRef": "risk_level",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

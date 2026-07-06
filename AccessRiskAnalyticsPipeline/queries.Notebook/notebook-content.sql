@@ -1,0 +1,94 @@
+-- Fabric notebook source
+
+-- METADATA ********************
+
+-- META {
+-- META   "kernel_info": {
+-- META     "name": "synapse_pyspark"
+-- META   },
+-- META   "dependencies": {
+-- META     "lakehouse": {
+-- META       "default_lakehouse": "41bfecef-df72-44f2-8176-95ef243c32bf",
+-- META       "default_lakehouse_name": "lh_AccessRiskAnalyticsPipeline",
+-- META       "default_lakehouse_workspace_id": "7f37925a-9f89-47d7-88a9-860a1bf4cb93",
+-- META       "known_lakehouses": [
+-- META         {
+-- META           "id": "41bfecef-df72-44f2-8176-95ef243c32bf"
+-- META         }
+-- META       ]
+-- META     },
+-- META     "warehouse": {
+-- META       "default_warehouse": "5899b20d-f6e6-4dc1-9f09-7b00c3dadcb7",
+-- META       "known_warehouses": [
+-- META         {
+-- META           "id": "5899b20d-f6e6-4dc1-9f09-7b00c3dadcb7",
+-- META           "type": "Lakewarehouse"
+-- META         }
+-- META       ]
+-- META     }
+-- META   }
+-- META }
+
+-- CELL ********************
+
+-- MAGIC %%sql
+-- MAGIC 
+-- MAGIC CREATE TABLE IF NOT EXISTS users (
+-- MAGIC     user_id STRING,
+-- MAGIC     username STRING,
+-- MAGIC     department STRING,
+-- MAGIC     role STRING,
+-- MAGIC     is_privileged BOOLEAN,
+-- MAGIC     account_status STRING,
+-- MAGIC     created_date DATE,
+-- MAGIC     last_password_change DATE,
+-- MAGIC     password_stale BOOLEAN,
+-- MAGIC     days_since_pwd_change INT
+-- MAGIC )
+-- MAGIC USING DELTA
+-- MAGIC PARTITIONED BY (department);
+-- MAGIC 
+-- MAGIC CREATE TABLE IF NOT EXISTS login_events (
+-- MAGIC     event_id STRING,
+-- MAGIC     user_id STRING,
+-- MAGIC     login_time TIMESTAMP,
+-- MAGIC     ip_address STRING,
+-- MAGIC     country STRING,
+-- MAGIC     login_status STRING,
+-- MAGIC     is_after_hours BOOLEAN,
+-- MAGIC     is_weekend BOOLEAN,
+-- MAGIC     device_type STRING,
+-- MAGIC     hour INT,
+-- MAGIC     day_of_week STRING,
+-- MAGIC     date DATE
+-- MAGIC )
+-- MAGIC USING DELTA
+-- MAGIC PARTITIONED BY (date);
+-- MAGIC 
+-- MAGIC CREATE TABLE IF NOT EXISTS access_requests (
+-- MAGIC     request_id STRING,
+-- MAGIC     user_id STRING,
+-- MAGIC     requested_role STRING,
+-- MAGIC     request_date DATE,
+-- MAGIC     status STRING,
+-- MAGIC     approver_id STRING
+-- MAGIC )
+-- MAGIC USING DELTA
+-- MAGIC PARTITIONED BY (request_date);
+-- MAGIC 
+-- MAGIC CREATE TABLE IF NOT EXISTS anomalies (
+-- MAGIC     id BIGINT,
+-- MAGIC     user_id STRING,
+-- MAGIC     anomaly_type STRING,
+-- MAGIC     risk_level STRING,
+-- MAGIC     detected_at TIMESTAMP
+-- MAGIC )
+-- MAGIC USING DELTA
+-- MAGIC PARTITIONED BY (risk_level);
+
+-- METADATA ********************
+
+-- META {
+-- META   "language": "sparksql",
+-- META   "language_group": "synapse_pyspark"
+-- META }

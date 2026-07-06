@@ -1,0 +1,124 @@
+table login_events
+	lineageTag: 82ae9de1-9713-49d5-8367-51355fc8b3da
+	sourceLineageTag: [dbo].[login_events]
+
+	column event_id
+		dataType: string
+		lineageTag: 782d9ab2-878b-464a-ad82-040c7a2210af
+		sourceLineageTag: event_id
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: f1ac8b27-b9d2-4c38-83ed-102d43764c24
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column login_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5e10480b-c61f-42ea-810e-f5845ca78d44
+		sourceLineageTag: login_time
+		summarizeBy: none
+		sourceColumn: login_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column ip_address
+		dataType: string
+		lineageTag: d8276624-c1ec-4fb3-8ad7-ff0a61256ba6
+		sourceLineageTag: ip_address
+		summarizeBy: none
+		sourceColumn: ip_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 54cda069-b927-4201-95bf-67e5877c59c4
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column login_status
+		dataType: string
+		lineageTag: f54408a7-ac7f-4137-a62c-c2b44d62d369
+		sourceLineageTag: login_status
+		summarizeBy: none
+		sourceColumn: login_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_after_hours
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ae387301-53cb-452b-bb9a-72d3c297fce3
+		sourceLineageTag: is_after_hours
+		summarizeBy: none
+		sourceColumn: is_after_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f4ae5f5c-7b47-4119-a08d-e412ebc15be3
+		sourceLineageTag: is_weekend
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_type
+		dataType: string
+		lineageTag: 03fcd557-1f83-42f6-b14f-8e8c1aa3808b
+		sourceLineageTag: device_type
+		summarizeBy: none
+		sourceColumn: device_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour
+		dataType: int64
+		formatString: 0
+		lineageTag: b3447ac3-dc7a-46d4-9396-4bf9eb044882
+		sourceLineageTag: hour
+		summarizeBy: sum
+		sourceColumn: hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: 619833c5-f06d-419d-bde9-eed3413545d7
+		sourceLineageTag: day_of_week
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0028dd3f-f228-4ebe-abaa-00f748f6b9c5
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition login_events = entity
+		mode: directLake
+		source
+			entityName: login_events
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+

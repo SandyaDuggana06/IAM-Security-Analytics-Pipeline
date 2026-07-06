@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "4c2496a2bd37012d0553",
+  "position": {
+    "x": 795.76520928948548,
+    "y": 500.35681010386833,
+    "z": 11,
+    "height": 158.30497946789055,
+    "width": 142.75716898443702,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "access_requests"
+                    }
+                  },
+                  "Property": "requested_role"
+                }
+              },
+              "queryRef": "access_requests.requested_role",
+              "nativeQueryRef": "requested_role",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fa2186bf2ec9deac116e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "access_requests"
+              }
+            },
+            "Property": "requested_role"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

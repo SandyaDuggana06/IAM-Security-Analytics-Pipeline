@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "926b16cfb6455fbdde89",
+  "position": {
+    "x": 839.58176610649093,
+    "y": 566.78836398771523,
+    "z": 10003,
+    "height": 131.44967045101626,
+    "width": 149.82435556782497,
+    "tabOrder": 10003
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "login_events"
+                    }
+                  },
+                  "Property": "device_type"
+                }
+              },
+              "queryRef": "login_events.device_type",
+              "nativeQueryRef": "device_type",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "86e423bae96dcf754f7e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "login_events"
+              }
+            },
+            "Property": "device_type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

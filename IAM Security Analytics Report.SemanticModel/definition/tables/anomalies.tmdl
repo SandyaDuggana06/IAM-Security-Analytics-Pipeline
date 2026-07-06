@@ -1,0 +1,125 @@
+table anomalies
+	lineageTag: eb094f91-8d7b-4e04-913e-7c7988909a33
+	sourceLineageTag: [dbo].[anomalies]
+
+	measure 'Total Anomalies' = COUNTROWS(anomalies)
+		formatString: 0
+		lineageTag: 50cadac9-6b59-4734-8586-29de4a65cbc7
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+	measure 'Critical Anomalies' =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "CRITICAL"
+			)
+		formatString: 0
+		lineageTag: 1d8773b6-d802-4e32-a3bf-4ba3e272f432
+
+		changedProperty = Name
+
+	measure 'High Risk' =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "HIGH"
+			)
+		formatString: 0
+		lineageTag: 6e6eb5c7-a643-428b-a8da-95d3737b08b9
+
+		changedProperty = Name
+
+	measure 'Medium Risk' =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "MEDIUM"
+			)
+		formatString: 0
+		lineageTag: 5f49396c-a928-4897-9e9f-1a7064e5e717
+
+		changedProperty = Name
+
+	measure 'Affected Users' =
+			
+			DISTINCTCOUNT(anomalies[user_id])
+		formatString: 0
+		lineageTag: 0a44fddc-3cb2-4039-9a11-d2865c8c2f42
+
+		changedProperty = Name
+
+	measure 'User Anomalies' = COUNTROWS(anomalies)
+		formatString: 0
+		lineageTag: 7a6b947c-94e4-4cac-ae0b-ff0a4c8c671d
+
+		changedProperty = Name
+
+	column user_id
+		dataType: string
+		lineageTag: 4e7a0e0c-4b97-4ea2-8d43-4b52787aa445
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_type
+		dataType: string
+		lineageTag: 4ef03bca-00f2-4f20-b5ac-fe2b01567097
+		sourceLineageTag: anomaly_type
+		summarizeBy: none
+		sourceColumn: anomaly_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_level
+		dataType: string
+		lineageTag: 0c756226-a161-4e43-a809-8808ee2c902f
+		sourceLineageTag: risk_level
+		summarizeBy: none
+		sourceColumn: risk_level
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: c93b1cfa-d6fb-485a-bb03-7d19c08f5180
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column detected_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6eea8653-c444-4ec4-8c06-e2f7ae036910
+		sourceLineageTag: detected_at
+		summarizeBy: none
+		sourceColumn: detected_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition anomalies = entity
+		mode: directLake
+		source
+			entityName: anomalies
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+
+	changedProperty = IsHidden
+

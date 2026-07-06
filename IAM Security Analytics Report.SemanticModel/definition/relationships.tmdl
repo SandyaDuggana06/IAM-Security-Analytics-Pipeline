@@ -1,0 +1,12 @@
+relationship b378fce3-8f16-b833-9224-54d8834facdf
+	fromColumn: login_events.user_id
+	toColumn: users.user_id
+
+relationship 24a571ee-79f8-05c9-9b79-3006697c404c
+	fromColumn: anomalies.user_id
+	toColumn: users.user_id
+
+relationship efc173ba-f548-0309-5898-06a4ba8d6601
+	fromColumn: access_requests.user_id
+	toColumn: users.user_id
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Pipeline_AccessRiskAnalytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e06bbd3b-2337-94bf-4d48-68a9fa587774"
+  }
+}
