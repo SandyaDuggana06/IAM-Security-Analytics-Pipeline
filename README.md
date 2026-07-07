@@ -171,7 +171,7 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Anomaly Types
 * Risk Distribution
 * Detailed Anomaly Table
-![Overview](images/AccessRiskAnalyticsPowerBIReport_Overview.png)
+  ![Overview](images/AccessRiskAnalyticsPowerBIReport_SecurityAnomalyDashboard.png)
 
 ### Page 4 – Access Management
 
@@ -180,7 +180,7 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Requested Roles
 * Access Request Trends
 * Detailed Access Request Table
-  ![Overview](images/AccessRiskAnalyticsPowerBIReport_SecurityAnomalyDashboard.png)
+![Overview](images/AccessRiskAnalyticsPowerBIReport_AccessManagement.png)
 
 # Technologies Used
 
