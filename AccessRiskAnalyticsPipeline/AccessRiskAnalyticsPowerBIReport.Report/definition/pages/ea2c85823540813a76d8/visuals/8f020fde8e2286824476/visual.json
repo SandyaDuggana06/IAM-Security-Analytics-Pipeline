@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "8f020fde8e2286824476",
+  "position": {
+    "x": 101.76748680078677,
+    "y": 291.16808723558438,
+    "z": 6,
+    "height": 35.335932916939853,
+    "width": 1132.1632906587529,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Users by Account Status                Users by Department               Privileged Vs Standard Users",
+                    "textStyle": {
+                      "fontFamily": "Arial Black",
+                      "fontSize": "16pt",
+                      "color": "#893395"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

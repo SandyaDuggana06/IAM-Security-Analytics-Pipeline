@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "a5abd6489509c85c1738",
+  "position": {
+    "x": 426.85806963663339,
+    "y": 240.28434383519098,
+    "z": 3,
+    "height": 305.30246040236034,
+    "width": 426.85806963663339,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "access_requests"
+                    }
+                  },
+                  "Property": "requested_role"
+                }
+              },
+              "queryRef": "access_requests.requested_role",
+              "nativeQueryRef": "requested_role",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "access_requests"
+                        }
+                      },
+                      "Property": "request_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(access_requests.request_id)",
+              "nativeQueryRef": "Count of request_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "access_requests"
+                      }
+                    },
+                    "Property": "request_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "70207eb08cf72cbe1745",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "access_requests"
+              }
+            },
+            "Property": "requested_role"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "29753f2ef4d355d26cfe",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "access_requests"
+                  }
+                },
+                "Property": "request_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

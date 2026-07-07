@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bb9d2e7aadfd02fac7dc",
+  "position": {
+    "x": 465.02087718692843,
+    "y": 522.97180717070978,
+    "z": 11,
+    "height": 151.23779288450257,
+    "width": 368.90713965285204,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "account_status"
+                }
+              },
+              "queryRef": "users.account_status",
+              "nativeQueryRef": "account_status",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0f708cd5b03e9a5da5c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "users"
+              }
+            },
+            "Property": "account_status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

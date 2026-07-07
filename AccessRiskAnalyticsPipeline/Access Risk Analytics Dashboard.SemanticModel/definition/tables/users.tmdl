@@ -1,0 +1,122 @@
+table users
+	lineageTag: ce7433f2-db8f-4c8d-9ba8-d846c17e5fdf
+	sourceLineageTag: [dbo].[users]
+
+	measure TotalUsers = COUNTROWS(users)
+		formatString: 0
+		lineageTag: 304aea86-8667-4f42-8657-fea1deaaed94
+
+		changedProperty = Name
+
+	column user_id
+		dataType: string
+		lineageTag: a455c4a2-1e83-48c8-b38a-b97427c007c6
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column username
+		dataType: string
+		lineageTag: 238fece2-c36a-4967-b276-d1b0c702deb7
+		sourceLineageTag: username
+		summarizeBy: none
+		sourceColumn: username
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: f1259fd7-0d29-4dd6-ba61-6c3f488dd830
+		sourceLineageTag: department
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: 0a9571f1-b019-4a67-9972-95b23f9b8473
+		sourceLineageTag: role
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_privileged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aa182cba-38ed-40f2-a9d1-318bd95f5fe3
+		sourceLineageTag: is_privileged
+		summarizeBy: none
+		sourceColumn: is_privileged
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_status
+		dataType: string
+		lineageTag: 9dfe9bd4-2eb3-42aa-87da-58fcbf130378
+		sourceLineageTag: account_status
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c3ba2c88-010b-44c2-ab04-fbeda948d8d4
+		sourceLineageTag: created_date
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_password_change
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4150e485-af85-41b9-bc1e-d5c5d31b39d4
+		sourceLineageTag: last_password_change
+		summarizeBy: none
+		sourceColumn: last_password_change
+
+		annotation SummarizationSetBy = Automatic
+
+	column password_stale
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f2a1ea5d-7a14-4c86-aaf9-9a24abd4c0ad
+		sourceLineageTag: password_stale
+		summarizeBy: none
+		sourceColumn: password_stale
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_since_pwd_change
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a01fb91-adf0-4823-80b2-0975aa170843
+		sourceLineageTag: days_since_pwd_change
+		summarizeBy: sum
+		sourceColumn: days_since_pwd_change
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 670c5a5f-73dc-4b1d-8d71-cc84d903aa6b
+		sourceLineageTag: ingested_at
+		summarizeBy: none
+		sourceColumn: ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition users = entity
+		mode: directLake
+		source
+			entityName: users
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+

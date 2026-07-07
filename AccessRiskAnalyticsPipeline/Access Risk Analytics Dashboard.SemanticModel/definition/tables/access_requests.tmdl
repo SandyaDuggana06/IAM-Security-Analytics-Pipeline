@@ -1,0 +1,84 @@
+table access_requests
+	lineageTag: 951598ce-62e2-40c0-b600-a06c968d5bf1
+	sourceLineageTag: [dbo].[access_requests]
+
+	measure 'Total Access Requests' = ```
+			COUNTROWS(access_requests) 
+			```
+		formatString: 0
+		lineageTag: 4e1be74c-89e6-4cfc-bbd8-3013749741b2
+
+		changedProperty = Name
+
+	column request_id
+		dataType: string
+		lineageTag: 9fc04a71-ad78-494c-8e86-40046f5f352f
+		sourceLineageTag: request_id
+		summarizeBy: none
+		sourceColumn: request_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: f637d094-8347-4a91-add2-77f1ae90757d
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column requested_role
+		dataType: string
+		lineageTag: 3e9fa7cb-e9b8-4a4f-ad90-41411fd5415f
+		sourceLineageTag: requested_role
+		summarizeBy: none
+		sourceColumn: requested_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column request_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1383ed6d-2e59-4333-aaff-090ab960ef7f
+		sourceLineageTag: request_date
+		summarizeBy: none
+		sourceColumn: request_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 87566c92-4d74-40e2-afc6-684bbcfab4cc
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column approver_id
+		dataType: string
+		lineageTag: 812e8558-be43-442f-88f5-b567e3190210
+		sourceLineageTag: approver_id
+		summarizeBy: none
+		sourceColumn: approver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a37a39fa-c02e-4d25-ba1a-b1fbb3db81c1
+		sourceLineageTag: ingested_at
+		summarizeBy: none
+		sourceColumn: ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition access_requests = entity
+		mode: directLake
+		source
+			entityName: access_requests
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+

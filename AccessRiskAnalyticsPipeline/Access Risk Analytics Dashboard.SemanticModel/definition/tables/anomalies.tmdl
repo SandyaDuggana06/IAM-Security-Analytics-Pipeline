@@ -1,0 +1,91 @@
+table anomalies
+	lineageTag: ded57498-cfae-4edf-a14f-86f9924f2fee
+	sourceLineageTag: [dbo].[anomalies]
+
+	measure Critical =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "CRITICAL"
+			)
+		formatString: 0
+		lineageTag: 14bebcc1-8823-4b82-831b-5ec273965e07
+
+		changedProperty = Name
+
+	measure High =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "HIGH"
+			)
+		formatString: 0
+		lineageTag: aa4ad20e-4696-4596-b3bb-2489231e93ee
+
+		changedProperty = Name
+
+	measure Medium =
+			
+			CALCULATE(
+			    COUNTROWS(anomalies),
+			    anomalies[risk_level] = "MEDIUM"
+			)
+		formatString: 0
+		lineageTag: 257e207f-ae79-4d2d-9567-5016ba6932b5
+
+		changedProperty = Name
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 523a7ca3-a750-434d-8271-76c20c12222f
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: 41a81e3b-354b-4212-9463-62e122d9176e
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column anomaly_type
+		dataType: string
+		lineageTag: 8e1a91e4-3993-48f0-bc83-f1e9f6bec49c
+		sourceLineageTag: anomaly_type
+		summarizeBy: none
+		sourceColumn: anomaly_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_level
+		dataType: string
+		lineageTag: 2250a1a9-837d-4d51-967f-cc0f1fa26680
+		sourceLineageTag: risk_level
+		summarizeBy: none
+		sourceColumn: risk_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column detected_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ae90851a-60f8-4fdf-b655-2bba59b21f1e
+		sourceLineageTag: detected_at
+		summarizeBy: none
+		sourceColumn: detected_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition anomalies = entity
+		mode: directLake
+		source
+			entityName: anomalies
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "beb0277e4d575e6c5f4f",
+  "position": {
+    "x": 101.76748680078677,
+    "y": 343.46526795265538,
+    "z": 7,
+    "height": 151.23779288450257,
+    "width": 340.63839331930018,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "account_status"
+                }
+              },
+              "queryRef": "users.account_status",
+              "nativeQueryRef": "account_status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "users"
+                        }
+                      },
+                      "Property": "user_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(users.user_id)",
+              "nativeQueryRef": "Count of user_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "users"
+                      }
+                    },
+                    "Property": "user_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4b295d5efd84cd64829c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "users"
+              }
+            },
+            "Property": "account_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "63e8b791713498dd6507",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "users"
+                  }
+                },
+                "Property": "user_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

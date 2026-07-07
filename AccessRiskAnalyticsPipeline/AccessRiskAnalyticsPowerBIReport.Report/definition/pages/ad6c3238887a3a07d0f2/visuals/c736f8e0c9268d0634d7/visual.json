@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c736f8e0c9268d0634d7",
+  "position": {
+    "x": 24.028434383519098,
+    "y": 360.42651575278649,
+    "z": 6,
+    "height": 149.82435556782497,
+    "width": 510.25087132061145,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "hundredPercentStackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "login_events"
+                    }
+                  },
+                  "Property": "device_type"
+                }
+              },
+              "queryRef": "login_events.device_type",
+              "nativeQueryRef": "device_type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "login_events"
+                        }
+                      },
+                      "Property": "event_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(login_events.event_id)",
+              "nativeQueryRef": "Count of event_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "login_events"
+                      }
+                    },
+                    "Property": "event_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9dbe80c424e5a44737ff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "login_events"
+              }
+            },
+            "Property": "device_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1851a4b6e29f22d0f291",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "login_events"
+                  }
+                },
+                "Property": "event_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

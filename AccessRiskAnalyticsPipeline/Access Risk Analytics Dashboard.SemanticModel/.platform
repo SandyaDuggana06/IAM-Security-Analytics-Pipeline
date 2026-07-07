@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Access Risk Analytics Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "29d7d6fc-a315-b770-4f6d-318b28fe77ee"
+  }
+}

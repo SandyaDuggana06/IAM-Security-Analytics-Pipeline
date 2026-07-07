@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "08572a88610eb5566863",
+  "position": {
+    "x": 863.61020049001,
+    "y": 111.66154801752994,
+    "z": 4,
+    "height": 149.82435556782497,
+    "width": 383.041512819628,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "login_events"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "login_events.country",
+              "nativeQueryRef": "country",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "login_events"
+                        }
+                      },
+                      "Property": "event_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(login_events.event_id)",
+              "nativeQueryRef": "Count of event_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "login_events"
+                      }
+                    },
+                    "Property": "event_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75207fd26c56bd53c999",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "login_events"
+              }
+            },
+            "Property": "country"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f454bc4e19ed8f98c34d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "login_events"
+                  }
+                },
+                "Property": "event_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

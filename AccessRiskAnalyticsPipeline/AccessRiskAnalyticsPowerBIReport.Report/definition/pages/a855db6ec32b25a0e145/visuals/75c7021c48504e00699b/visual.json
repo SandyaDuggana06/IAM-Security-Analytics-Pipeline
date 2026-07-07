@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "75c7021c48504e00699b",
+  "position": {
+    "x": 26.855309016874287,
+    "y": 131.44967045101626,
+    "z": 1,
+    "height": 48.056868767038196,
+    "width": 1253.718899893026,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Total Requests                           Requested Roles  ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial Black",
+                      "fontSize": "18pt",
+                      "color": "#893395"
+                    }
+                  },
+                  {
+                    "value": "                                         ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial Black",
+                      "fontSize": "16pt",
+                      "color": "#893395"
+                    }
+                  },
+                  {
+                    "value": "Requests Over Time",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Arial Black",
+                      "fontSize": "18pt",
+                      "color": "#893395"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

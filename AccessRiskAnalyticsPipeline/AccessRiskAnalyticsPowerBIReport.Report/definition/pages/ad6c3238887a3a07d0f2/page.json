@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ad6c3238887a3a07d0f2",
+  "displayName": "Login Activity",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

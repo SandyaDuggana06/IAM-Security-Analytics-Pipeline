@@ -1,0 +1,12 @@
+relationship 9323b90f-cf1a-0ffc-ecb3-a7fc8209b866
+	fromColumn: login_events.user_id
+	toColumn: users.user_id
+
+relationship c08d7dd3-0dc9-df1a-a5a3-9747764e1177
+	fromColumn: anomalies.user_id
+	toColumn: users.user_id
+
+relationship 7936c1b8-5b86-2842-53d4-7c275a844f1a
+	fromColumn: users.user_id
+	toColumn: access_requests.user_id
+

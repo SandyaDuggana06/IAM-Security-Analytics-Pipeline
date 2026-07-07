@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f550720879b36f84dbd3",
+  "position": {
+    "x": 433.92525622002137,
+    "y": 412.72369646985749,
+    "z": 11,
+    "height": 248.76496773525656,
+    "width": 354.77276648607614,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "anomalies"
+                    }
+                  },
+                  "Property": "anomaly_type"
+                }
+              },
+              "queryRef": "anomalies.anomaly_type",
+              "nativeQueryRef": "anomaly_type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "anomalies"
+                        }
+                      },
+                      "Property": "user_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(anomalies.user_id)",
+              "nativeQueryRef": "Count of user_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "anomalies"
+                      }
+                    },
+                    "Property": "user_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7bc5ba98ab90cafce9f6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "anomalies"
+              }
+            },
+            "Property": "anomaly_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9f1262f293f9165b8c27",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "anomalies"
+                  }
+                },
+                "Property": "user_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+table login_events
+	lineageTag: f1418cff-4eca-4e7b-a6b2-f5035cd5e90e
+	sourceLineageTag: [dbo].[login_events]
+
+	measure 'Total Login Events' = COUNTROWS(login_events)
+		formatString: 0
+		lineageTag: bbfb3b4c-8035-4c6a-9785-827a1f812125
+
+		changedProperty = Name
+
+	measure 'Total Anomalies' = COUNTROWS(anomalies)
+		formatString: 0
+		lineageTag: bc5c0e67-ead5-415a-a27a-a53a2691c4ee
+
+		changedProperty = Name
+
+	column event_id
+		dataType: string
+		lineageTag: 7a3a4fcf-fafd-4764-9bd9-0380bd97cd0c
+		sourceLineageTag: event_id
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: a0f9d69e-95c0-431d-8c58-58b7aa1f9560
+		sourceLineageTag: user_id
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column login_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b22880e4-7882-4a14-859c-7ba134a1ea5f
+		sourceLineageTag: login_time
+		summarizeBy: none
+		sourceColumn: login_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column ip_address
+		dataType: string
+		lineageTag: fbc8cd36-4dfa-474f-9b9c-db719ab9a495
+		sourceLineageTag: ip_address
+		summarizeBy: none
+		sourceColumn: ip_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 97654b18-0c45-4261-b3ba-eb5aa33d4265
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column login_status
+		dataType: string
+		lineageTag: df1c2cfa-735a-4a7a-b05a-8e37fa62bcea
+		sourceLineageTag: login_status
+		summarizeBy: none
+		sourceColumn: login_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_after_hours
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 464007f8-1ae9-4f43-b5c1-6eeae159d699
+		sourceLineageTag: is_after_hours
+		summarizeBy: none
+		sourceColumn: is_after_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2f4098ea-f2ef-4cbe-bdca-ad8b29f2ad64
+		sourceLineageTag: is_weekend
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_type
+		dataType: string
+		lineageTag: 9c1032cb-0bbc-455c-935f-e9943e156a7f
+		sourceLineageTag: device_type
+		summarizeBy: none
+		sourceColumn: device_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour
+		dataType: int64
+		formatString: 0
+		lineageTag: d2051023-70ce-450e-adec-e32ca621180a
+		sourceLineageTag: hour
+		summarizeBy: sum
+		sourceColumn: hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: 9ec6ca0d-8753-4cbf-86cc-1412f1918387
+		sourceLineageTag: day_of_week
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a9387696-96b6-4922-846b-05ecdfaf99c3
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9a85f192-8dc9-4017-8d5d-edb436a0d3a5
+		sourceLineageTag: ingested_at
+		summarizeBy: none
+		sourceColumn: ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition login_events = entity
+		mode: directLake
+		source
+			entityName: login_events
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_AccessRiskAnalyticsPipeline'
+

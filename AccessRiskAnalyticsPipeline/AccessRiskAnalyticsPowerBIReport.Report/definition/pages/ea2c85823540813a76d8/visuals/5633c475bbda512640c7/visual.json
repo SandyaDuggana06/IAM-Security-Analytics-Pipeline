@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "5633c475bbda512640c7",
+  "position": {
+    "x": 101.76748680078677,
+    "y": 521.55836985403221,
+    "z": 10,
+    "height": 151.23779288450257,
+    "width": 298.23527381897236,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "users"
+                    }
+                  },
+                  "Property": "department"
+                }
+              },
+              "queryRef": "users.department",
+              "nativeQueryRef": "department",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "159a2d84f4c51d862358",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "users"
+              }
+            },
+            "Property": "department"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
