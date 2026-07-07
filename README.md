@@ -152,7 +152,7 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Account Status Distribution
 * Privileged vs Standard Users
 
-
+![Overview](images/AccessRiskAnalyticsPowerBIReport_Overview.png)
 
 ### Page 2 – Login Activity
 
