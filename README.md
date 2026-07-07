@@ -152,6 +152,8 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Account Status Distribution
 * Privileged vs Standard Users
 
+
+
 ### Page 2 – Login Activity
 
 * Login Trends
@@ -168,6 +170,8 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Anomaly Types
 * Risk Distribution
 * Detailed Anomaly Table
+
+https://github.com/SandyaDuggana06/IAM-Security-Analytics-Pipeline/blob/main/AccessRiskAnalyticsPowerBIReport_SecurityAnomalyDashboard.png
 
 ### Page 4 – Access Management
 
