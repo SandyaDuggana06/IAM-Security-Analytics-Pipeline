@@ -161,6 +161,7 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Login Distribution by Country
 * Device Usage
 * Business Hours vs After Hours Logins
+  ![Overview](images/AccessRiskAnalyticsPowerBIReport_LoginActivity.png)
 
 ### Page 3 – Security Anomalies
 
@@ -170,8 +171,7 @@ An interactive security analytics dashboard was built on top of the curated Delt
 * Anomaly Types
 * Risk Distribution
 * Detailed Anomaly Table
-
-https://github.com/SandyaDuggana06/IAM-Security-Analytics-Pipeline/blob/main/AccessRiskAnalyticsPowerBIReport_SecurityAnomalyDashboard.png
+![Overview](images/AccessRiskAnalyticsPowerBIReport_Overview.png)
 
 ### Page 4 – Access Management
 
@@ -180,6 +180,7 @@ https://github.com/SandyaDuggana06/IAM-Security-Analytics-Pipeline/blob/main/Acc
 * Requested Roles
 * Access Request Trends
 * Detailed Access Request Table
+  ![Overview](images/AccessRiskAnalyticsPowerBIReport_SecurityAnomalyDashboard.png)
 
 # Technologies Used
 
