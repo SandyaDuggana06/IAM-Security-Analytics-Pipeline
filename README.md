@@ -275,23 +275,15 @@ notebooks/
 ├── 03_nb_AnomalyDetectionGold.ipynb
 ├── 04_CreateTables.sql
 ├── 05_nb_LoadToDelta.ipynb
-│
-powerbi/
-│
-├── IAM_Security_Analytics.pbix
+├── AccessRiskAnalyticsBIReport.Report
 │
 images/
-│
-├── architecture.png
-├── dashboard_overview.png
-├── login_activity.png
-├── anomalies_dashboard.png
-├── access_management.png
+├── AccessRiskAnalyticsBIReport_AccessManagement.png
+├── AccessRiskAnalyticsBIReport_LoginActivity.png
+├── AccessRiskAnalyticsBIReport_Overview.png
+├── AccessRiskAnalyticsBIReport_SecurityAnomalyDashboard.png
 │
 README.md
-```
-
----
 
 # Future Improvements
 
